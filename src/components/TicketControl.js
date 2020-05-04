@@ -11,7 +11,6 @@ class TicketControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // formVisibleOnPage: false,
       selectedTicket: null,
       editing: false
     };
@@ -33,17 +32,8 @@ class TicketControl extends React.Component {
     }
   }
 
-  handleAddingNewTicketToList = (newTicket) => {
+  handleAddingNewTicketToList = () => {
     const { dispatch } = this.props;
-    const { id, names, location, issue } = newTicket;
-    // const action = {
-    //   type: 'ADD_TICKET',
-    //   id: id,
-    //   names: names,
-    //   location: location,
-    //   issue: issue,
-    // }
-    // dispatch(action);
     const action2 = {
       type: 'TOGGLE_FORM'
     }
@@ -69,22 +59,22 @@ class TicketControl extends React.Component {
     this.setState({editing: true});
   }
 
-  handleEditingTicketInList = (ticketToEdit) => {
-    const { dispatch } = this.props;
-    const { id, names, location, issue } = ticketToEdit;
-    const action = {
-      type: 'ADD_TICKET',
-      id: id,
-      names: names,
-      location: location,
-      issue: issue,
-    }
-    dispatch(action);
-    this.setState({
-      editing: false,
-      selectedTicket: null
-    });
-  }
+  // handleEditingTicketInList = (ticketToEdit) => {
+  //   const { dispatch } = this.props;
+  //   const { id, names, location, issue } = ticketToEdit;
+  //   const action = {
+  //     type: 'ADD_TICKET',
+  //     id: id,
+  //     names: names,
+  //     location: location,
+  //     issue: issue,
+  //   }
+  //   dispatch(action);
+  //   this.setState({
+  //     editing: false,
+  //     selectedTicket: null
+  //   });
+  // }
 
   render(){
     let currentlyVisibleState = null;
